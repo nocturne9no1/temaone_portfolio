@@ -1,0 +1,387 @@
+$main_color: #115bab;
+
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 400;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix")
+      format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff")
+      format("woff"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 700;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff")
+      format("woff"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 300;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix")
+      format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff")
+      format("woff"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf")
+      format("truetype");
+}
+
+$font_KR: "NanumBarunGothic", sans-serif;
+
+body {
+  font-family: "NanumBarunGothic", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+header {
+  .menubar {
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    .logo {
+      position: absolute;
+      margin-top: 20px;
+      width: 233px;
+      img {
+        width: inherit;
+      }
+    }
+    .menu_list {
+      padding-left: 380px;
+      padding-right: 370px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      height: 66px;
+      li {
+        font-size: 20px;
+        font-weight: 900;
+        a {
+          transition: color 0.3s;
+        }
+        .selected {
+          color: $main_color;
+        }
+        & > a:hover {
+          color: $main_color;
+        }
+      }
+    }
+    .button_area {
+      position: absolute;
+      right: 0;
+      top: 25px;
+      .fa-magnifying-glass {
+        color: $main_color;
+      }
+      .login_btn {
+        margin-left: 10px;
+        border: 1px solid #e5e5e7;
+        color: #999;
+        font-size: 13px;
+        background-color: #fff;
+        padding: 7px 15px;
+        cursor: pointer;
+      }
+    }
+  }
+  .nav_bottom {
+    height: 40px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    .breadcrumb {
+      display: flex;
+      li {
+        position: relative;
+        padding-right: 30px;
+        color: #1b1d21;
+        font-size: 14px;
+        padding: 7px 11px;
+        & + li {
+          padding-left: 30px;
+          &::before {
+            content: "";
+            width: 10px; /* 사이즈 */
+            height: 10px; /* 사이즈 */
+            border-top: 1px solid #777; /* 선 두께 */
+            border-right: 1px solid #777; /* 선 두께 */
+            display: inline-block;
+            transform: rotate(45deg); /* 각도 */
+            position: absolute;
+            top: 10px;
+            left: 0;
+          }
+        }
+        & + li > .bread_item {
+          padding-right: 20px;
+          position: relative;
+          &::after {
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            border: 5px solid transparent;
+            border-bottom-width: 0;
+            border-top-color: #777;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 5px;
+          }
+        }
+        .now_item {
+          color: $main_color;
+        }
+      }
+    }
+    .icon_list {
+      display: flex;
+      align-items: center;
+      margin-top: 5px;
+      padding-right: 10px;
+      li {
+        margin-left: 20px;
+        i {
+          color: #777;
+        }
+      }
+      .print_tip_btn {
+        background-color: #777;
+        width: 64px;
+        height: 21px;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+main {
+  .container {
+    background-color: #f7f7f9;
+    height: 100%;
+    .inner_wrap {
+      padding-top: 50px;
+      padding-bottom: 100px;
+      width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .page_title {
+      font-size: 24px;
+      color: $main_color;
+      padding-bottom: 20px;
+      margin-bottom: 35px;
+      border-bottom: 2px $main_color solid;
+      font-weight: bold;
+    }
+    .inner_text {
+      font-size: 17px;
+      margin-bottom: 40px;
+      color: #44484f;
+      line-height: 1.7;
+    }
+    .content_list {
+      .content_item {
+        .item_title {
+          font-size: 24px;
+          color: #1b1d21;
+          font-weight: bold;
+        }
+        .item_detail_box {
+          margin-top: 15px;
+          margin-bottom: 70px;
+          padding: 30px;
+          background-color: #efeff3;
+          font-size: 16px;
+          color: #6e7179;
+          .item_intro {
+            line-height: 1.5;
+            margin-bottom: 30px;
+          }
+          .detail_list {
+            & > li {
+              border-bottom: 1px #dadada solid;
+              margin-bottom: 25px;
+            }
+            & > li:last-child {
+              border: none;
+              margin-bottom: 0;
+              ul {
+                margin-bottom: 0;
+              }
+            }
+            .detail_item_title {
+              color: $main_color;
+              font-size: 17px;
+              font-weight: bold;
+              margin-bottom: 5px;
+            }
+            .detail_item_list {
+              margin-bottom: 30px;
+              li {
+                position: relative;
+                margin: 3px 0;
+                line-height: 26px;
+                padding-left: 12px;
+                &::before {
+                  content: "";
+                  position: absolute;
+                  width: 4px;
+                  height: 4px;
+                  background-color: #555;
+                  top: 10px;
+                  left: 0;
+                }
+              }
+            }
+            .detail_item_outro {
+              color: $main_color;
+              padding-bottom: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.expand {
+  width: 100%;
+  height: 0px;
+  background-color: #115bab;
+  transition: all 0.3s;
+  overflow-y: hidden;
+}
+.yes {
+  height: 450px;
+}
+
+footer {
+  background-color: #595f6a;
+  width: 100vw;
+  height: 200px;
+  .footer_inner {
+    width: 1280px;
+    margin: 0 auto;
+    ul {
+      font-size: 15px;
+      display: flex;
+      li {
+        padding: 20px 15px;
+        position: relative;
+        &:first-child {
+          padding-left: 0;
+        }
+        & + li {
+          &::before {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 15px;
+            background-color: #7c7e82;
+            left: -2px;
+          }
+        }
+        a {
+          color: #fff;
+          &:hover {
+            color: #7498dc;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    .footer_top {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px #515762 solid;
+      .link_list {
+        font-size: 15px;
+      }
+      .button_area {
+        button {
+          position: relative;
+          font-family: $font_KR;
+          width: 165px;
+          font-size: 15px;
+          padding: 20px;
+          color: #fff;
+          &:hover {
+            background: #464c58;
+          }
+          &::before {
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            border: 5px solid transparent;
+            border-top-width: 0;
+            border-bottom-color: #fff;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 25px;
+          }
+        }
+      }
+    }
+    .footer_bottom {
+      li > a {
+        font-size: 13px;
+      }
+      .sitemap::after {
+        content: " ";
+        height: 0;
+        width: 0;
+        margin-left: 8px;
+        border: 5px solid transparent;
+        border-right-width: 0;
+        display: inline-block;
+        border-left-color: #fff;
+        vertical-align: middle;
+      }
+      .footer_info {
+        margin-top: 6px;
+        color: #b0b4bb;
+        font-size: 13px;
+        p {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+
+  .selected {
+    color: #7498dc !important; // 원래 임포떤트 지양
+    text-decoration: underline;
+  }
+}

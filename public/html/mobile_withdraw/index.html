@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--
+    모바일용 뷰포트 설정
+    * viewport = mobile width
+    * content=width=device-width: fit contents width to divice size
+    * initial-scale=1.0: 1.0 = 100%
+    * minimum-scale: 화면 줄였을 때 최소 화면 크기
+    * maximum-scale: 화면 늘렸을 때 최대 화면 크기
+    * user-scalable: user can not control size
+  -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="./css/_reset.css" />
+  <link rel="stylesheet" href="./css/withdraw.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
+  <script defer src="app.js"></script>
+  <script src="https://kit.fontawesome.com/a411547728.js" crossorigin="anonymous"></script>
+  <title>계좌이체</title>
+</head>
+<body>
+  <nav>
+    <div class="nav_wrap">
+      <button class="back_btn"></button>
+      <div class="nav_contents">
+        <button class="nav_name">연정화</button>
+        <span class="account_info">입출금통장 (4464)</span>
+      </div>
+      <button class="cancel_btn">취소</button>
+    </div>
+  </nav>
+  <main>
+    <div class="main_wrap">
+      <div class="account_info">
+        <div class="figure">5,000,000원</d>
+      </div>
+    </div>
+    <div class="contents_wrap">
+      <ul class="account_contents">
+        <li class="account_contents_item btn">
+          <p>입출금통장(4464):</p>
+        </li>
+        <li class="account_contents_item">
+          <p>받는 분에게 표기</p>
+          <p>한예슬</p>
+        </li>
+        <li class="account_contents_item">
+          <p>나에게 표기</p>
+          <p>김명준</p>
+        </li>
+      </ul>
+      <div class="btn_wrap">
+        <button type="button" id="confirm-btn">확인</button>
+      </div>
+    </div>
+    <div class="modal_body">
+      <div class="first_modal">
+        <i class="logo"></i>
+        <p class="question">
+          <span class="bold">한예슬</span>에게 <span class="bold">5,000,000원</span>
+          <br>
+          이체하시겠습니까?
+        </p>
+        <p class="modal_account_info">
+          받는계좌: 크레딧은행 3210-30212-1114-20
+        </p>
+        <div class="modal_button_wrap">
+          <button type="button" class="cancel_btn" id="cancel-btn">취소</button>
+          <button type="button" class="transfer_btn" id="transfer-btn">이체하기</button>
+        </div>
+      </div>
+      <div class="second_modal">
+        <div class="top">
+          <p>인증 비밀번호 입력</p>
+          <ul class="password_dot">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="bottom">
+          <ul class="numbers">
+            <li><button type="button">4</button></li>
+            <li><button type="button">7</button></li>
+            <li><button type="button">6</button></li>
+            <li><button type="button">8</button></li>
+            <li><button type="button">5</button></li>
+            <li><button type="button">9</button></li>
+            <li><button type="button">1</button></li>
+            <li><button type="button">0</button></li>
+            <li><button type="button">3</button></li>
+            <li><button type="button">2</button></li>
+            <li><button type="button">&larr;</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="third">
+      <div class="complete_top">
+        <strong>이체완료</strong>
+        <button>
+          <i class="fa-solid fa-comment-dots"></i>
+          <span>메모 입력..</span>
+        </button>
+      </div>
+      <div class="complete_bottom">
+        <p class="name">
+          이경숙(영월교도소)
+          <button>
+            <i class="fa-solid fa-star"></i>
+          </button>
+        </p>
+        <div class="info_wrap">
+          <div class="info_detail">
+            <p class="info_title">받는계좌</p>
+            <p class="info_con">크레딧은행 3210-30212-1114-20</p>
+          </div>
+          <div class="info_detail">
+            <p class="info_title">보낸금액</p>
+            <p class="info_con">5,000,000원</p>
+          </div>
+          <button>더보기</button>
+        </div>
+      </div>
+      <button>확인</button>
+    </div>
+  </main>
+</body>
+</html>

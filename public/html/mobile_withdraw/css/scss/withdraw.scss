@@ -1,0 +1,393 @@
+$main_color: #0055a7;
+
+@font-face {
+  font-family: 'Happiness-Sans-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+$font: 'Happiness-Sans-Regular';
+
+body {
+  font-family: $font;
+}
+
+button{
+  background: inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor: pointer;
+}
+
+.bold {
+  font-weight: 900;
+}
+
+nav {
+  min-height: 50px;
+  .nav_wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .back_btn {
+      width: 50px;
+      height: 50px;
+      position: relative;
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 16px;
+        width: 2px;
+        height: 10px;
+        background-color: #222;
+        transform: rotate(35deg);
+      }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        bottom: 16px;
+        width: 2px;
+        height: 10px;
+        background-color: #222;
+        transform: rotate(-35deg);
+      }
+    }
+    .nav_contents {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .nav_name {
+        margin-top: 8px;
+        font-size: 16px;
+        font-weight: 900;
+        position: relative;
+        &::after {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: -15px;
+          content: '';
+          display: inline-block;
+          border-top: 5px solid #222;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+        }
+      }
+      .account_info {
+        margin-top: 6px;
+        font-size: 14px;
+        color: #999;
+        font-weight: 900;
+      }
+    }
+    .cancel_btn {
+      padding-right: 12px;
+      font-size: 16px;
+      font-weight: 900;
+      color: #777;
+    }
+  }
+}
+
+
+.main_wrap {
+  position: relative;
+  .account_info {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .figure {
+      font-size: 50px;
+      font-weight: 900;
+    }
+  }
+  .contents_wrap {
+    position: fixed;
+    width: 100%;
+    bottom: 100px;
+  }
+  .account_contents {
+    padding: 0 20px;
+    font-size: 14px;
+    li + li {
+      margin-top: 12px;
+    }
+    .account_contents_item {
+      border: 1px #222 solid;
+      border-radius: 16px;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: start;
+      position: relative;
+      p {
+        font-family: $font;
+      }
+      &.btn::after {
+        content: '';
+        border: solid black;
+        border-width: 0 1px 1px 0;
+        padding: 3px;
+        transform: rotate(45deg);
+      }
+    }
+  }
+  .btn_wrap {
+    margin: 0 20px;
+    margin-top: 12px;
+    background-color: $main_color;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+    button {
+      border-radius: 14px;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      font-size: 20px;
+    }
+  }
+  .modal_body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #77777790;
+    position: fixed;
+    top: 0;
+    visibility: hidden;
+    // display: none;
+  }
+  .first_modal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    // height: 300px;
+    height: 0;
+    visibility: hidden;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    opacity: 1;
+    background-color: #fff;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 100px 20px 20px 20px;
+    text-align: center;
+    .logo {
+      position: absolute;
+      left: 50%;
+      top: 35px;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: $main_color;
+    }
+    .question {
+      font-size: 20px;
+      line-height: 1.5;
+      padding-bottom: 20px;
+    }
+    .modal_account_info {
+      font-size: 12px;
+      color: #999;
+    }
+    .modal_button_wrap {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      button {
+        height: 30px;
+        padding: 30px 60px;
+        font-size: 16px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // white-space: nowrap;
+        &.cancel_btn {
+          background-color: #bbb;
+          flex-grow: 1;
+        }
+        &.transfer_btn {
+          color: white;
+          flex-grow: 1.5;
+          margin-left: 10px;
+          background-color: $main_color;
+        }
+      }
+    }
+  }
+  .second_modal {
+    height: 500px;
+    width: 100%;
+    visibility: hidden;
+    background-color: $main_color;
+    position: fixed;
+    bottom: 0;
+    z-index: 3;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    .top {
+      height: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .password_dot {
+        margin-top: 20px;
+        display: flex;
+        width: 150px;
+        justify-content: space-around;
+        li {
+          background-color: white;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          &.black {
+            background-color: black;
+          }
+        }
+      }
+    }
+    .bottom {
+      height: 60%;
+      background-color: #ddd;
+      .numbers {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        li {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          button {
+            font-size: 24px;
+            padding: 20px 40px;
+          }
+          &:nth-child(10) {
+            grid-column-start: 2;
+          }
+        }
+      }
+    }
+  }
+  .third {
+    display: none;
+    position: absolute;
+    top: -51px;
+    left: 0;
+    background-color: #fff;
+    width: 100vw;
+    height: 100vh;
+    .complete_top {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 200px;
+      padding-bottom: 250px;
+      strong {
+        font-size:24px;
+        font-weight: 900;
+        position: relative;
+        &::before {
+          position: absolute;
+          width: 20px;
+          height: 5px;
+          display: block;
+          content: '';
+          border-left: 3px solid white;
+          border-bottom: 3px solid white;
+          top: -45px;
+          left: 33px;
+          transform: rotate(-45deg);
+          z-index: 3;
+        }
+        &::after {
+          width: 45px;
+          height: 45px;
+          background-color: $main_color;
+          border-radius: 50%;
+          position: absolute;
+          content: '';
+          display: block;
+          top: -60px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+      button {
+        margin-top: 24px;
+        padding: 7px 12px;
+        background-color: #eeeeee;
+        border-radius: 15px;
+        font-weight: 500;
+      }
+    }
+    .complete_bottom {
+      padding: 48px;
+      position: absolute;
+      bottom: 50px;
+      width: calc(100% - 96px);
+      .name {
+        font-size: 16px;
+        font-weight: 900;
+        button {
+          width: 20px;
+          height: 20px;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .fa-star {
+          width: 100%;
+          height: 100%;
+          // color: rgb(231, 231, 33);
+          color: $main_color;
+        }
+      }
+      .info_wrap {
+        margin-top: 12px;
+        .info_detail {
+          display: flex;
+          justify-content: space-between;
+          font-size: 14px;
+          & + .info_detail {
+            margin-top: 8px;
+          }
+          .info_title {
+            color: #999;
+          }
+          .info_con {
+            font-weight: 900;
+          }
+        }
+        button {
+          background-color: #eeeeee;
+          width: 100%;
+          padding: 8px;
+          border-radius: 10px;
+          margin-top: 20px;
+          font-size: 14px;
+        }
+      }
+    }
+    & > button {
+      background-color: $main_color;
+      position: absolute;
+      bottom: 24px;
+      margin-left: 24px;
+      padding: 12px;
+      width: calc(100% -  48px);
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 500;
+      color: white;
+    }
+  }
+}
