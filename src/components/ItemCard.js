@@ -4,7 +4,7 @@ const ItemCard = (props) => {
   return (
     <div>
       <button onClick={() => window.open(`/html/${props.name}/index.html`)}>
-        테스트
+        {props.name}
       </button>
     </div>
   )
